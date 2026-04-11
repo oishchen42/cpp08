@@ -4,11 +4,12 @@
 template <typename T>
 void easyfind(T& object, int a)
 {
-    for (size_t i = 0; i < object.size(); i++ )
+    typename T::iterator it = object.begin();
+    for (; it != object.end(); it++)
     {
-        if (object[i] == a)
+        if (*it == a)
         {
-            std::cout << "The first occurance of the: " << a << " is found at the position: " << i << std::endl;
+            std::cout << "The first occurance of the: " << a << " is found at the position: " << std::distance(object.begin(), it) << std::endl;
             return ;
         }
     }

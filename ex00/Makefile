@@ -4,7 +4,9 @@ CXX := c++
 RM := rm -rf
 FLAGS := -Wall -Wextra -Werror -std=c++17
 
-SRC := main.cpp
+HEADERS := easyfind.hpp easyfind.tpp
+
+SRC := main.cpp 
 OBJ := $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -12,7 +14,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CXX) $(FLAGS) $(OBJ) -o $(NAME)
 
-%.o : %.cpp
+%.o : %.cpp $(HEADERS)
 	$(CXX) $(FLAGS) -c $< -o $@
 
 clean:
