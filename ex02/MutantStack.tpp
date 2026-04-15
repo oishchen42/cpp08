@@ -30,4 +30,5 @@ template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::end()
 {
     return this->c.end();
+    std::cout << "bls";
 }
